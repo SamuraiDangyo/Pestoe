@@ -31,8 +31,7 @@ namespace pestoe {
 
 // Constants
 
-constexpr std::string_view kVersion = "Pestoe 1.1"; // Version
-constexpr int kMaxPieces            = (2 * (8 * 1 + 2 * 3 + 2 * 3 + 2 * 5 + 2 * 9 + 2 * 0)); // Max pieces on board (Kings always exist)
+constexpr int kMaxPieces = (2 * (8 * 1 + 2 * 3 + 2 * 3 + 2 * 5 + 2 * 9 + 2 * 0)); // Max pieces on board (Kings always exist)
 
 // Evaluation phases      ( P, N, B, R, Q, K )
 constexpr int kPiece[6] = { 1, 3, 3, 5, 9, 0 };
