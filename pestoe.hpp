@@ -31,21 +31,19 @@ namespace pestoe {
 
 // Constants
 
-constexpr int kMaxPieces = (2 * (8 * 1 + 2 * 3 + 2 * 3 + 2 * 5 + 2 * 9 + 2 * 0)); // Max pieces on board (Kings always exist)
+constexpr int kMaxPieces = 2 * (8 * 1 + 2 * 3 + 2 * 3 + 2 * 5 + 1 * 9 + 1 * 0); // Max pieces on board (Kings always exist)
 
 // Evaluation phases      ( P, N, B, R, Q, K )
 constexpr int kPiece[6] = { 1, 3, 3, 5, 9, 0 };
 
-constexpr int kPestoMaterial[2][6] =
-{
+constexpr int kPestoMaterial[2][6] = {
  // P   N    B    R    Q     K
   { 82, 337, 365, 477, 1025, 0 }, // MG
   { 94, 281, 297, 512,  936, 0 }  // EG
 };
 
 // [Piece][Phase][Square]
-constexpr int kPestoPsqt[6][2][64] =
-{
+constexpr int kPestoPsqt[6][2][64] = {
   {
     // Pawn (MG)
     {
@@ -227,7 +225,7 @@ int CalculateScore() { // 96 phases for HCE
 
 /*
 Phased Pesto Evaluation (PPE)
-+-+-+ Board encoding +-+-+
++-+-+ Board Encoding +-+-+
 +1: White Pawn
 +2: White Knight
 +3: White Bishop
@@ -247,4 +245,5 @@ int Evaluate(const std::int8_t *board) {
   EvaluatePieces(board);
   return CalculateScore(); // cp
 }
+
 } // namespace pestoe
